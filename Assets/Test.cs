@@ -1,20 +1,32 @@
-using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-
+public class Boss
+{
+private int mp = 53;
+public void Magic()
+{
+if(mp >= 5)
+{
+int num = mp - 5;
+Debug.Log("魔法攻撃を攻撃した。残りMPは" + num);
+}
+else
+{
+Debug.Log("MPが足りないため、魔法攻撃が使えない。");
+}
+}
+}
 public class Test : MonoBehaviour
 {
-    // Use this for initialization
-    void Start()
+void Start()
 {
-int[] array={10,20,30,40,50};
-for(int a= 0;a < 5 ;a++)
+Boss lastboss = new Boss();
+lastboss.Magic();
+for(int i = 0;i < 10;i++)
 {
-Debug.Log(array[a]);
-}
-for(int b=4;b >= 0 ;b--)
-{
-Debug.Log(array[b]);
+Debug.Log("MPが足りないため、魔法攻撃が使えない。");
 }
 }
 
